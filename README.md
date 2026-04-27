@@ -2,6 +2,10 @@
 
 Landing estatica preparada para publicarse desde GitHub Pages.
 
+URL esperada de publicacion:
+
+https://conradogdi.github.io/laboratorio-de-soluciones/
+
 ## Publicacion en GitHub Pages
 
 1. Entra en la configuracion del repositorio en GitHub.
