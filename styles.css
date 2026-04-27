@@ -200,6 +200,83 @@ h3 {
   color: var(--accent-strong);
 }
 
+.roulette-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.roulette-card {
+  display: grid;
+  gap: 16px;
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  backdrop-filter: blur(10px);
+}
+
+.roulette-card > .button {
+  justify-self: start;
+  width: auto;
+}
+
+.roulette-label {
+  margin: 0;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.roulette-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.roulette-available {
+  font-size: 0.75rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.roulette-value {
+  margin: 0;
+  min-height: 2.3em;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  line-height: 1.2;
+}
+
+.button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.roulette-controls {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.button-secondary {
+  background-color: #e8e1d7;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+.button-secondary:hover:not(:disabled) {
+  background-color: #ddd4ca;
+}
+
 .dyn-card {
   display: grid;
   grid-template-rows: auto auto 1fr auto;
@@ -215,6 +292,23 @@ h3 {
 .dyn-card:hover {
   box-shadow: 0 16px 48px rgba(20, 53, 43, 0.14);
   transform: translateY(-3px);
+}
+
+.dyn-card-selected {
+  border-color: rgba(255, 111, 60, 0.7);
+  background: linear-gradient(180deg, rgba(255, 215, 200, 0.72) 0%, rgba(255, 250, 241, 0.95) 100%);
+  box-shadow: 0 18px 52px rgba(203, 77, 31, 0.18);
+  transform: translateY(-4px);
+}
+
+.dyn-card-selected .dyn-number,
+.dyn-card-selected h3 {
+  color: var(--accent-strong);
+}
+
+.dyn-card-selected .dyn-tag {
+  background: rgba(255, 111, 60, 0.18);
+  border: 1px solid rgba(255, 111, 60, 0.24);
 }
 
 .dyn-card-top {
@@ -298,14 +392,14 @@ h3 {
 /* ── Reveal animation ── */
 
 .reveal {
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 500ms ease, transform 500ms ease;
+  opacity: 1;
+  transform: none;
+  transition: none;
 }
 
 .reveal.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 /* ── Responsive ── */
@@ -337,6 +431,10 @@ h3 {
   }
 
   .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .roulette-grid {
     grid-template-columns: 1fr;
   }
 

@@ -28,6 +28,38 @@
 
       <main id="inicio">
 
+        <section class="section" id="ruletas">
+          <div class="section-heading">
+            <p class="eyebrow">Sorteo</p>
+          </div>
+
+          <div class="roulette-grid">
+            <article class="roulette-card">
+              <p class="roulette-label">Ruleta de dinámicas</p>
+              <p class="roulette-value" id="dynamic-value">Cargando...</p>
+              <button class="button button-primary" id="spin-dynamics" type="button" disabled>
+                Girar dinámica
+              </button>
+            </article>
+
+            <article class="roulette-card">
+              <div class="roulette-header">
+                <p class="roulette-label">Ruleta de usuarios</p>
+                <p class="roulette-available" id="available-count">(cargando)</p>
+              </div>
+              <p class="roulette-value" id="user-value">Cargando...</p>
+              <div class="roulette-controls">
+                <button class="button button-primary" id="spin-users" type="button" disabled>
+                  Girar usuario
+                </button>
+                <button class="button button-secondary" id="reset-users" type="button" title="Limpiar selecciones">
+                  Resetear
+                </button>
+              </div>
+            </article>
+          </div>
+        </section>
+
         <!-- Grid de las 10 dinámicas -->
         <section class="section reveal" id="dinamicas">
           <div class="section-heading">
